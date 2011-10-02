@@ -1,0 +1,3 @@
+This is a migration utility to 
+1. Move reporting services artifacts from one server to another
+2. Download reporting services artifacts from an SSRS server

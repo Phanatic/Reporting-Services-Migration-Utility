@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B9A3419C-2A97-48AD-B96E-2D1F3A339B60}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.SqlServer.Discovery.ReportingServices.Schema</RootNamespace>
+    <AssemblyName>Microsoft.SqlServer.Discovery.ReportingServices.Schema</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <DelaySign>true</DelaySign>
+    <AssemblyOriginatorKeyFile>$(SDXROOT)\sql\common\snk\SQL2003SNKEY.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;VS_BUILD</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>1591;</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;VS_BUILD</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SqlServer.Management.SqlParser, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.SqlServer.Management.SqlParser\11.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.Management.SqlParser.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="2005\CatalogContract.cs" />
+    <Compile Include="2005\CodeCoverageOverrides.cs" />
+    <Compile Include="2005\ReportDefinitionSchema2005.cs">
+      <DependentUpon>ReportDefinitionSchema2005.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="2006\CatalogContract.cs" />
+    <Compile Include="2006\CodeCoverageOverrides.cs" />
+    <Compile Include="2008R2\CodeCoverageOverrides.cs" />
+    <Compile Include="2008R2\ReportDefinitionSchema2008R2.cs">
+      <DependentUpon>ReportDefinitionSchema2008R2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="2010\CatalogContract.cs" />
+    <Compile Include="2010\CodeCoverageOverrides.cs" />
+    <Compile Include="2010\ReportDefinitionSchema2010.cs">
+      <DependentUpon>ReportDefinitionSchema2010.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="2005\ReportingServices2005.cs" />
+    <Compile Include="2006\ReportingServices2006.cs" />
+    <Compile Include="2010\ReportingServices2010.cs" />
+    <Compile Include="Contracts\ICatalogItem.cs" />
+    <Compile Include="SemanticModelDefinitionSchema.cs" />
+    <Compile Include="SharedDataSetDefinition2010.cs">
+      <DependentUpon>SharedDataSetDefinition2010.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="2005\ReportDefinitionSchema2005.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="2008R2\ReportDefinitionSchema2008R2.xsd">
+      <CustomToolNamespace>Microsoft.SqlServer.Discovery.ReportingServicesProvider_2008.Schema</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="2010\ReportDefinitionSchema2010.xsd">
+      <CustomToolNamespace>Microsoft.SqlServer.Discovery.ReportingServicesProvider_2010.Schema</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SharedDataSetDefinition2010.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
